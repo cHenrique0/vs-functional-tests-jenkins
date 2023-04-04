@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class IteraLoginTest {
 
     public WebDriver acessarAplicacao() {
-        System.setProperty("webdriver.chrome.driver","driver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","driver/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.navigate().to("https://itera-qa.azurewebsites.net/Login");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
