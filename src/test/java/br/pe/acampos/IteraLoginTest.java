@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,7 +14,13 @@ public class IteraLoginTest {
 
     public WebDriver acessarAplicacao() {
         System.setProperty("webdriver.chrome.driver","driver/chromedriver");
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("start-maximized");
+        options.addArguments("disable-infobars");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        WebDriver driver = new ChromeDriver(options);
         driver.navigate().to("https://itera-qa.azurewebsites.net/Login");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
