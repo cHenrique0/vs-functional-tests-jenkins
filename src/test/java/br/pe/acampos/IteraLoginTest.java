@@ -17,9 +17,9 @@ public class IteraLoginTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         options.addArguments("disable-infobars");
-        options.addArguments("--disable-extensions");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
+        options.addArguments("headless");
+        options.addArguments("no-sandbox");
+        options.addArguments("disable-dev-shm-usage");
         WebDriver driver = new ChromeDriver(options);
         driver.navigate().to("https://itera-qa.azurewebsites.net/Login");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
